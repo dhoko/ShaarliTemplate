@@ -1,11 +1,19 @@
-Modern template for [Shaarli](https://github.com/sebsauvage/Shaarli 'Shaarli The personal, minimalist, super-fast, no-database delicious clone.')
+# A modern template for Shaarli
 
-### How to install ?
+Modern template for [Shaarli](https://github.com/sebsauvage/Shaarli 'Shaarli The personal, minimalist, super-fast, no-database delicious clone.')
+You can see a hostedversion [on my shaarli](http://colibri-libre.org/liens/)
+
+## How to install ?
 
 Replace **tpl/** from Shaarli with this one.
 
+## How to Customize ?
 
-### Screenshots
+. Open **tpl/includes.html**
+. Replace l8 : shaarli.min.css to shaarli.css
+. Edit **tpl/shaarli.css**
+
+## Screenshots
 
 #### Main View
 

@@ -650,7 +650,7 @@ h1 a {
 .banner h1 a{color: #AA94E7}
 h1 a:hover {color: rgb(14, 88, 122)}
 
-#link-list {
+#link-list, .search-custom {
     -webkit-transform:translateZ(0);
     -moz-transform:translateZ(0);
     -o-transform:translateZ(0);
@@ -842,4 +842,45 @@ div.dailyEntryDescription
     margin-bottom: 30px; 
     text-align:justify; 
     overflow:auto;
+}
+
+
+/* Petits écrans */
+#toggle-nav {display: none}
+
+@media (max-width: 640px) {
+
+    [title=menu]:before {
+        content: attr(data-icon);
+        position: absolute;
+        top: 7px;
+        left: 8px;
+        z-index: 1337;
+        padding: 0.1em 0.3em;
+        font-size: 2.5em;
+        font-weight: bold;
+        line-height: .7em;
+        background: rgba(255, 255, 255, .4);
+        color: #000;
+        border-radius: 4px;
+    }
+    .search-custom {
+        position: absolute;
+        left: 0;
+        margin-left: -300px;
+        z-index: 10;
+        width: 230px;
+        height: 100%;
+        margin-top: -23px;
+        box-shadow: 0 0 15px rgba(0,0,0,.5);
+        -webkit-transition: margin-left .4s;
+        -moz-transition: margin-left .4s;
+        -o-transition: margin-left .4s;
+        -ms-transition: margin-left .4s;
+        transition: margin-left .4s;
+    }
+
+    #toggle-nav:checked + .search-custom {
+        margin-left: 0;
+    }
 }

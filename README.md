@@ -9,9 +9,9 @@ Replace **tpl/** from Shaarli with this one.
 
 ## How to Customize ?
 
-*Open **tpl/includes.html**
-*Replace l8 : shaarli.min.css to shaarli.css
-*Edit **tpl/shaarli.css**
+* Open **tpl/includes.html**
+* Replace l8 : shaarli.min.css to shaarli.css
+* Edit **tpl/shaarli.css**
 
 ## Screenshots
 

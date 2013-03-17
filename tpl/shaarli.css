@@ -781,7 +781,12 @@ article nav {
 }
 .ui-menu-item {list-style: none; margin-bottom: 5px}
 .ui-menu-item:hover {background-color: #eee}
-.ui-menu-item a{display: block; width: 100%; padding: 3px}
+.ui-menu-item a{
+    display: block;
+    width: 100%; 
+    padding: 3px;
+    font-size: .8em
+}
 .ui-state-hover { background-color: #676767; color:#fff; }
 
 .daily

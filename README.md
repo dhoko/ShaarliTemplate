@@ -1,4 +1,4 @@
-Moderne template for [Shaarli](https://github.com/sebsauvage/Shaarli 'Shaarli The personal, minimalist, super-fast, no-database delicious clone.')
+Modern template for [Shaarli](https://github.com/sebsauvage/Shaarli 'Shaarli The personal, minimalist, super-fast, no-database delicious clone.')
 
 ### How to install ?
 

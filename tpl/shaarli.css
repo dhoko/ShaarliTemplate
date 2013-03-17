@@ -846,11 +846,11 @@ div.dailyEntryDescription
 
 
 /* Petits écrans */
-#toggle-nav {display: none}
+#toggle-search {display: none}
 
 @media (max-width: 640px) {
 
-    [title=menu]:before {
+    label[for="toggle-search"]:before {
         content: attr(data-icon);
         position: absolute;
         top: 7px;
@@ -862,7 +862,7 @@ div.dailyEntryDescription
         line-height: .7em;
         background: rgba(255, 255, 255, .4);
         color: #000;
-        border-radius: 4px;
+        border-radius: 4px
     }
     .search-custom {
         position: absolute;
@@ -877,10 +877,8 @@ div.dailyEntryDescription
         -moz-transition: margin-left .4s;
         -o-transition: margin-left .4s;
         -ms-transition: margin-left .4s;
-        transition: margin-left .4s;
+        transition: margin-left .4s
     }
 
-    #toggle-nav:checked + .search-custom {
-        margin-left: 0;
-    }
+    #toggle-search:checked + .search-custom {margin-left: 0}
 }

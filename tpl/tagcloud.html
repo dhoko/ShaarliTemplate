@@ -2,14 +2,12 @@
 <html>
 <head>{include="includes"}</head>
 <body>
-	<div id="pageheader">{include="page.header"}</div>
-<center>
-<div id="cloudtag">
+{include="page.header"}
+<section id="cloudtag" class="boxwhite tag-cloud">
     {loop="tags"}
     <span style="color:#99f; font-size:9pt; padding-left:5px; padding-right:2px;">{$value.count}</span><a href="?searchtags={$key|htmlspecialchars}" style="font-size:{$value.size}pt; font-weight:bold; color:black; text-decoration:none">{$key|htmlspecialchars}</a>
     {/loop}
-</div>
-</center>
+</section>
 {include="page.footer"}
 </body>
 </html>

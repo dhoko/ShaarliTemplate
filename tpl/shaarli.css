@@ -771,6 +771,7 @@ article nav {
     box-shadow: none
 }
 .bookmarklet-page textarea{font-size: 0.9em}
+.tag-cloud{text-align: center}
 .tools-page li {margin-bottom: 10px}
 .ui-autocomplete {
     background-color:#fff;

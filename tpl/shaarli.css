@@ -750,7 +750,7 @@ article nav {
 .editlink label:first-child {margin-top: 0}
 .form-size {min-width: 97%}
 #lf_tags {font-size: 0.8em}
-.button-div {margin-top: 10px}
+.button-div {margin-top: 5px}
 .button-div input[type="button"] {padding: 5px 15px}
 
 .button-div input[value="Save"] {color: #0C9DE8}
@@ -770,7 +770,7 @@ article nav {
     border: none;
     box-shadow: none
 }
-
+.bookmarklet-page textarea{font-size: 0.9em}
 .tools-page li {margin-bottom: 10px}
 .ui-autocomplete {
     background-color:#fff;

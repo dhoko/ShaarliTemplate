@@ -1,7 +1,7 @@
 # A modern template for Shaarli
 
 Modern template for [Shaarli](https://github.com/sebsauvage/Shaarli 'Shaarli The personal, minimalist, super-fast, no-database delicious clone.')
-You can see a hostedversion [on my shaarli](http://colibri-libre.org/liens/)
+You can see a hosted version [on my shaarli](http://colibri-libre.org/liens/)
 
 ## How to install ?
 

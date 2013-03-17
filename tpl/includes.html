@@ -8,3 +8,6 @@
 <link type="text/css" rel="stylesheet" href="tpl/shaarli.min.css?version={$version|urlencode}#" />
 {if condition="is_file('inc/user.css')"}<link type="text/css" rel="stylesheet" href="inc/user.css?version={$version}#" />{/if}
 {if="empty($GLOBALS['disablejquery'])"}<script src="inc/jquery.min.js#"></script><script src="inc/jquery-ui.min.js#"></script>{/if}
+<!--[if lt IE 9]>
+<script src="dist/html5shiv.js"></script>
+<![endif]-->

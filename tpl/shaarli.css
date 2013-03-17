@@ -534,7 +534,9 @@ table {
 body{
 	background: #ddd url(noisy_grid.png)
 }
-a{color: #D867E8; text-decoration: none;}
+
+h1 {font-size: 1.79em;line-height: 0.91em}
+a{color: #0CD1FE; text-decoration: none;}
 a:hover{text-decoration: underline}
 .hidden {display: none}
 .right {float: right}
@@ -628,7 +630,11 @@ input[type="submit"] {padding: 5px 15px}
 
 article, .search-custom {position: relative}
 .search-custom {padding-top: 0;max-width: 600px}
-.private {background: rgb(255, 229, 229); border-color: rgb(175, 167, 167)}
+.private {
+    background: rgb(254, 57, 128);
+    background: rgba(254, 57, 128,0.2);
+    border-color: rgb(175, 167, 167)
+}
 
 .thumbnail {
     float: left;
@@ -637,17 +643,27 @@ article, .search-custom {position: relative}
 }
 h1 a {
 	text-decoration: none;
-	color: #0C9DE8;
+	color: #181818;
 	text-shadow: 0 1px 2px rgba(0,0,0,.23)
 }
 
+.banner h1 a{color: #AA94E7}
 h1 a:hover {color: rgb(14, 88, 122)}
+
+#link-list {
+    -webkit-transform:translateZ(0);
+    -moz-transform:translateZ(0);
+    -o-transform:translateZ(0);
+    transform:translateZ(0);
+    -webkit-backface-visibility: hidden;
+}
 
 article nav {
 	background: #eee;
 	border: 1px solid #ccc;
 	padding: 5px;
 	font-size: 0.8em;
+    overflow: hidden
 }
 
 .link-tag-list {margin: 5px; padding: 0}

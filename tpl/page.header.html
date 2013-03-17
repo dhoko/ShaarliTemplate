@@ -1,0 +1,33 @@
+<header id="header" class="banner">
+    
+    <h1>
+        <a href="?" title="Share your links !">{$shaarlititle|htmlspecialchars}</a> 
+    </h1>
+    <h2>Shaare your links... <span class="shaarli-count">{if="!empty($linkcount)"}(<span>{$linkcount}</span> links){/if}</span></h2>
+
+{if="!empty($_GET['source']) && $_GET['source']=='bookmarklet'"}
+    {ignore} When called as a popup from bookmarklet, do not display menu. {/ignore}
+{else}
+    <nav id="navigation">
+        <ul>
+            <li><a href="{$feedurl}?do=rss{$searchcrits}" class="nomobile" title="Shaarli RSS Feed">RSS Feed</a></li>
+            <li><a href="{$feedurl}?do=atom{$searchcrits}" class="nomobile" title="Shaarli ATOM Feed">ATOM Feed</a></li>
+            <li><a href="?do=tagcloud" title="Shaarli Tag cloud">Tag cloud</a></li>
+            <li><a href="?do=picwall" title="Shaarli Picture wall">Picture wall</a></li>
+            <li><a href="?do=daily" title="Shaarli Daily">Daily</a></li>
+
+            {if="isLoggedIn()"}
+                <li class="logged-links"><a href="?do=addlink">Add link</a></li>
+                <li class="logged-links"><a href="?do=tools">Tools</a></li>
+                <li class="logged-links"><a href="?searchtags=Unread">To read</a></li>
+                <li class="logged-links"><a href="?do=logout">Logout</a></li>
+            {elseif="$GLOBALS['config']['OPEN_SHAARLI']"}
+                <li class="logged-links"><a href="?do=tools">Tools</a></li>
+                <li class="logged-links"><a href="?do=addlink">Add link</a></li>
+            {else}
+                <li><a href="?do=login">Login</a></li>
+            {/if}
+        </ul>
+    </nav>
+{/if}
+</header>

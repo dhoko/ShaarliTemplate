@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>{include="includes"}</head>
+<body>
+	{include="page.header"}
+	<section class="boxwhite">
+		
+	<ul>
+		
+		{if="!$GLOBALS['config']['OPEN_SHAARLI']"}
+			<li><b>Change password</b>  : <a href="?do=changepasswd">Change your password.</a></li>
+		{/if}
+	    <li><b>Configure your Shaarli</b> :  <a href="?do=configure">Change Title, timezone...</a></li>
+	    <li><b>Rename/delete tags</b> :  <a href="?do=changetag">Rename or delete a tag in all links</a></li>
+	    <li><b>Import</b> :  <a href="?do=import">Import Netscape html bookmarks (as exported from Firefox, Chrome, Opera, delicious...)</a> </li>
+	   <li><b>Export</b> :   <a href="?do=export">Export Netscape html bookmarks (which can be imported in Firefox, Chrome, Opera, delicious...)</a></li>
+	</ul>
+
+	<dl>
+		<dt>
+			<a class="smallbutton" onclick="alert('Drag this link to your bookmarks toolbar, or right-click it and choose Bookmark This Link...');return false;" href="javascript:javascript:(function(){var%20url%20=%20location.href;var%20title%20=%20document.title%20||%20url;window.open('{$pageabsaddr}?post='%20+%20encodeURIComponent(url)+'&amp;title='%20+%20encodeURIComponent(title)+'&amp;source=bookmarklet','_blank','menubar=no,height=450,width=600,toolbar=no,scrollbars=no,status=no,dialog=1');})();"><b>Shaare link</b></a>
+		</dt>
+			<dd>Drag this link to your bookmarks toolbar (or right-click it and choose Bookmark This Link....).<br>Then click "Shaare link" button in any page you want to share</dd>
+	</dl>
+	</section>
+{include="page.footer"}
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html {if="!empty($_GET['source']) && $_GET['source']=='bookmarklet'"}class="bookmarklet-page" {/if}>
+<head>
+{include="includes"}
+<script type="text/javascript">
+function askPreview() {
+  $.post('index.php', {
+    "p_linkdate": $('#lf_linkdate').val(),
+    "p_url": $('#lf_url').val(),
+    "p_title": $('#lf_title').val(),
+    "p_description": $('#lf_description').val(),
+    "p_tags": $('#lf_tags').val(),
+    "p_private": $('#lf_private').is(':checked'),
+    "preview_edit": true
+  }, function(data) {
+    var _previewEditLink = $('#previeweditlink');
+    _previewEditLink.html(data);
+    _previewEditLink.show();
+  }, 'html')
+  .fail(function() { alert('Unknown error while loading preview'); });
+}
+</script>
+</head>
+<body 
+{if condition="$link.title==''"}onload="document.linkform.lf_title.focus();"
+{elseif condition="$link.description==''"}onload="document.linkform.lf_description.focus();"
+{else}onload="document.linkform.lf_tags.focus();"{/if} >
+
+	{include="page.header"}
+	<div id="editlinkform" class="boxwhite editlink">
+	    <form method="post" name="linkform" >
+	        <input type="hidden" id="lf_linkdate" name="lf_linkdate" value="{$link.linkdate}" class="form-size">
+
+	        <label for="lf_url">URL</label>
+            <input type="text" id="lf_url" name="lf_url" value="{$link.url|htmlspecialchars}"  class="form-size">
+
+	        <label for="lf_title">Title</label>
+            <input type="text" id="lf_title" name="lf_title" value="{$link.title|htmlspecialchars}"  class="form-size">
+
+	        <label for="lf_description">Description</label>
+            <textarea id="lf_description" name="lf_description" rows="5" cols="25"  class="form-size">{$link.description|htmlspecialchars}</textarea>
+
+	        <label for="lf_tags">Tags</label>
+            <input type="text" id="lf_tags" name="lf_tags" value="{$link.tags|htmlspecialchars}"  class="form-size">
+	        
+            {if condition="($link_is_new && $GLOBALS['privateLinkByDefault']==true) || $link.private == true"}
+                <label for="lf_private"><input type="checkbox" checked="checked" name="lf_private" id="lf_private">Private</label>
+            {else}
+                <label for="lf_private"><input type="checkbox" checked="checked" name="lf_private" id="lf_private">Private</label>
+            {/if}
+
+	       <div class="button-div">
+                <input type="submit" value="Save" name="save_edit" class="bigbutton" />
+                <input type="submit" value="Read later" name="save_edit" class="bigbutton" />
+                <input type="button" value="Preview" id="preview_edit" class="bigbutton" onClick="return askPreview();">
+                <input type="submit" value="Cancel" name="cancel_edit" class="bigbutton" />
+                {if condition="!$link_is_new"}
+                    <input type="submit" value="Delete" name="delete_link" class="bigbutton" onClick="return confirmDeleteLink();" />
+                {/if}
+                <input type="hidden" name="token" value="{$token}" />
+                {if condition="$http_referer"}
+                    <input type="hidden" name="returnurl" value="{$http_referer|htmlspecialchars}" />
+                {/if}   
+           </div>
+	    </form>
+	</div>
+<div id="previeweditlink" style="display:none">
+</div>
+{include="page.footer"}
+</body>
+</html>

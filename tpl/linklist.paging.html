@@ -1,0 +1,30 @@
+<nav class="shaarli-pagination">
+    <ul class="pagination-configuration">
+        {if="isLoggedIn()"}
+        <li class="private">
+            <a href="?privateonly" title="Display only your private links">
+                {if="$privateonly"}
+                <img src="images/private_16x16_active.png#" width="16" height="16" title="Click to see all links" alt="Click to see all links" />
+                {else}
+                <img src="images/private_16x16.png#" width="16" height="16" title="Click to see only private links" alt="Click to see only private links" />
+                {/if}
+            </a>
+        </li>
+        {/if}
+
+        <li class="number-links">
+            Links per page: <a href="?linksperpage=20" title="20">20</a> | <a href="?linksperpage=50" title="50">50</a> | <a href="?linksperpage=100" title="100">100</a> |  <form method="GET" class="links-per-page"><input type="text" name="linksperpage" /></form>
+        </li>
+    </ul>
+
+    <ul class="pagination">
+        {if="$previous_page_url"} 
+            <li><a href="{$previous_page_url}" id="paging_older">&#x25C4;Older</a></li>
+        {/if}
+        <li>page {$page_current} / {$page_max}</li>
+        {if="$next_page_url"}
+            <li><a href="{$next_page_url}" id="paging_newer">Newer&#x25BA;</a></li>
+        {/if}
+    </ul>
+    
+</nav>

@@ -2,24 +2,6 @@
 <html {if="!empty($_GET['source']) && $_GET['source']=='bookmarklet'"}class="bookmarklet-page" {/if}>
 <head>
 {include="includes"}
-<script type="text/javascript">
-function askPreview() {
-  $.post('index.php', {
-    "p_linkdate": $('#lf_linkdate').val(),
-    "p_url": $('#lf_url').val(),
-    "p_title": $('#lf_title').val(),
-    "p_description": $('#lf_description').val(),
-    "p_tags": $('#lf_tags').val(),
-    "p_private": $('#lf_private').is(':checked'),
-    "preview_edit": true
-  }, function(data) {
-    var _previewEditLink = $('#previeweditlink');
-    _previewEditLink.html(data);
-    _previewEditLink.show();
-  }, 'html')
-  .fail(function() { alert('Unknown error while loading preview'); });
-}
-</script>
 </head>
 <body 
 {if condition="$link.title==''"}onload="document.linkform.lf_title.focus();"
@@ -51,8 +33,6 @@ function askPreview() {
 
 	       <div class="button-div">
                 <input type="submit" value="Save" name="save_edit" class="bigbutton" />
-                <input type="submit" value="Read later" name="save_edit" class="bigbutton" />
-                <input type="button" value="Preview" id="preview_edit" class="bigbutton" onClick="return askPreview();">
                 <input type="submit" value="Cancel" name="cancel_edit" class="bigbutton" />
                 {if condition="!$link_is_new"}
                     <input type="submit" value="Delete" name="delete_link" class="bigbutton" onClick="return confirmDeleteLink();" />
@@ -64,8 +44,7 @@ function askPreview() {
            </div>
 	    </form>
 	</div>
-<div id="previeweditlink" style="display:none">
-</div>
+
 {include="page.footer"}
 </body>
 </html>

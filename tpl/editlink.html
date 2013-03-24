@@ -25,10 +25,10 @@
 	        <label for="lf_tags">Tags</label>
             <input type="text" id="lf_tags" name="lf_tags" value="{$link.tags|htmlspecialchars}"  class="form-size">
 	        
-            {if condition="($link_is_new && $GLOBALS['privateLinkByDefault']==true) || $link.private == true"}
+            {if condition="$GLOBALS['privateLinkByDefault']==true  || $link.private && !$link_is_new || $link_is_new "}
                 <label for="lf_private"><input type="checkbox" checked="checked" name="lf_private" id="lf_private">Private</label>
             {else}
-                <label for="lf_private"><input type="checkbox" checked="checked" name="lf_private" id="lf_private">Private</label>
+                <label for="lf_private"><input type="checkbox" name="lf_private" id="lf_private">Private</label>
             {/if}
 
 	       <div class="button-div">

@@ -8,6 +8,21 @@
 <script language="JavaScript">function confirmDeleteLink() { return confirm("Are you sure you want to delete this link ?");}</script>
 {/if}
 
+{if="empty($GLOBALS['disablejquery'])"}
+<script type="text/javascript" src="components/jquery-masonry/jquery.masonry.js"></script>
+<script type="text/javascript">
+if(document.width >= 840 && 'masonry' in $.fn && !isOpera) {
+	var $container =  $(document.getElementById('link-list'));
+	// $container.find('article').wookmark({"container":$container,"offset": 20});
+	$container.masonry({
+	  itemSelector: '.boxwhite',
+	  columnWidth: 45,
+	  isFitWidth: true
+	});
+}
+
+</script>
+{/if}
 {if="($GLOBALS['config']['OPEN_SHAARLI'] || isLoggedIn()) && empty($GLOBALS['disablejquery'])"}
 <script language="JavaScript">
 $(document).ready(function()

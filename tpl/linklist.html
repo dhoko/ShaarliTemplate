@@ -90,11 +90,11 @@
             </div>
         </article>
     {/loop}
-    {if="count($links)!==0"}
-    <div class="boxwhite bottom-pagination">{include="linklist.paging"}</div>
-    {/if}
 
 </section>
+    {if="count($links)!==0"}
+    <div class="bottom-pagination">{include="linklist.paging"}</div>
+    {/if}
 
 <figure id="showQrcode" class="qrcode" style="display:none">
     <img src="'+link+'#" width="200" height="200" />

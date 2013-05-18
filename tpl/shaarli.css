@@ -532,7 +532,8 @@ table {
 	Shaarli CSS
 */
 body{
-	background: #ddd url(noisy_grid.png)
+	background: #ddd url(background.png);
+    font-size: 95.5%
 }
 
 h1 {font-size: 1.79em;line-height: 0.91em}
@@ -544,12 +545,12 @@ a:hover{text-decoration: underline}
 .clear {clear: both; visibility: hidden; border: 0}
 
 #header {
-	background: #444;
-	padding: 5px;
-	border-bottom: 3px solid #fff;
-	margin-bottom: 20px;
-	box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
-	position: relative
+	background: rgba(0,0,0,.85) url(degrade-header.png) repeat-x bottom;
+    padding: 5px;
+    border-bottom: 3px solid #fff;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    position: relative
 }
 
 #header h1, #header h2 {text-align: center; margin-bottom: 0}
@@ -611,6 +612,8 @@ input[type="text"],input[type="mail"],input[type="password"], textarea {
 
 input[type="submit"] {padding: 5px 15px}
 
+input, button, textarea {font-size: 0.8em}
+
 .search-custom form {margin-top: 10px}
 .shaarli-pagination {margin-top: 25px}
 .pagination-configuration, .pagination {padding: 0;margin: 0;font-size: 0.8em}
@@ -619,21 +622,23 @@ input[type="submit"] {padding: 5px 15px}
 .pagination-configuration .private {background-color: transparent}
 .links-per-page input {width: 30px}
 
-.boxwhite{
+.boxwhite {
     background: white;
     padding: 10px 20px;
     max-width: 900px;
     margin: 10px auto;
-    border: 1px solid rgb(207, 207, 207);
-    box-shadow: 0 0 15px rgba(0,0,0,.05);
+    border: 1px solid rgb(165, 165, 165);
+    box-shadow: 0 2px 2px 0px rgba(0,0,0,.235)
 }
 
+/*.boxwhite:nth-child(2n+2) {float: right}*/
 article, .search-custom {position: relative}
 .search-custom {padding-top: 0;max-width: 600px}
 .private {
-    background: rgb(254, 57, 128);
-    background: rgba(254, 57, 128,0.2);
-    border-color: rgb(175, 167, 167)
+    background: #FA8282;
+    /*background: rgba(254, 57, 128,0.2);*/
+    border-color: rgb(247,12,12);
+    border-color: rgb(247,12,12,.7)
 }
 
 .thumbnail {
@@ -707,11 +712,28 @@ article nav {
 	border-right: 0
 }
 
-.bottom-pagination {max-width: 450px}
+.bottom-pagination {
+    max-width: 450px;
+    margin: 0 auto;
+    color: black;
+    text-align: center;
+    text-shadow: 0 1px 1px rgb(243, 242, 242);
+    font-weight: bold
+}
+.bottom-pagination a {
+color: black;
+}
 .bottom-pagination ul:first-child{float: left; margin-right: 25px}
 .bottom-pagination .pagination{padding-top: 4px}
 .bottom-pagination .shaarli-pagination{margin: 0 0 5px}
 
+#link-list {
+    width: 90%;
+    margin: 0 auto 2em;
+    height: 100%;
+    position: relative
+}
+#link-list .boxwhite {margin: 0 0 15px 0}
 #footer {
     text-align: center;
     font-size: 0.75em
@@ -772,6 +794,9 @@ article nav {
 }
 .bookmarklet-page textarea{font-size: 0.9em}
 .tag-cloud{text-align: center}
+.boxwhite.tag-cloud,
+.daily.boxwhite{width: 90%}
+
 .tools-page li {margin-bottom: 10px}
 .ui-autocomplete {
     background-color:#fff;
@@ -862,12 +887,22 @@ div.dailyEntryDescription
     overflow:auto;
 }
 
-
 /* Petits écrans */
 #toggle-search {display: none}
+@media (min-width: 850px) { 
+    .boxwhite {width: 45%}
+}
+.no-js.boxwhite,
+.is-opera.boxwhite {width: 90%}
+
+
+@media (min-width: 1300px) {
+    #link-list {width: 1172px}
+}
+
 
 @media (max-width: 640px) {
-
+    
     label[for="toggle-search"]:before {
         content: attr(data-icon);
         position: absolute;

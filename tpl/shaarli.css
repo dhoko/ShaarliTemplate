@@ -897,11 +897,13 @@ div.dailyEntryDescription
 
 
 @media (min-width: 1300px) {
-    #link-list {width: 1172px}
+    #link-list {max-width: 1172px}
 }
 
 
 @media (max-width: 640px) {
+
+    #link-list {width: 100%}
     
     label[for="toggle-search"]:before {
         content: attr(data-icon);

@@ -4,7 +4,7 @@
 <body>
     {include="page.header"}
     <label for="toggle-search" data-icon="≡" title="menu-search"></label><input type="checkbox" id="toggle-search" />
-    <section class="boxwhite search-custom">
+    <div class="boxwhite search-custom">
         <div class="left">
             <form method="GET" class="search-form" name="searchform">
                 <input type="text" id="searchform_value" name="searchterm" value="" />
@@ -19,7 +19,7 @@
             {include="linklist.paging"}
         </div>
         <hr class="clear" />
-    </section>
+    </div>
 
 {if="$search_type=='fulltext'"}
    <div class="boxwhite"> <span class="search search-isset">{$result_count} results for <i>{$search_crits}</i></span></div>
@@ -35,11 +35,11 @@
 {/if}
 
 
-<section id="link-list" {if="count($links)==0"}class="boxwhite"{/if}>
-    
-    
+<div id="link-list" {if="count($links)==0"}class="boxwhite"{/if}>
+
+
     {if="count($links)==0"}
-        <span class="search search-empty">Nothing found.</span>    
+        <span class="search search-empty">Nothing found.</span>
     {/if}
 
         {loop="links"}
@@ -79,7 +79,7 @@
                     {else}
                         <span class="link-date" title="Short link here"><a href="?{$value.linkdate|smallHash}">permalink</a> - </span>
                     {/if}
-                    <a href="http://invx.com/code/qrcode/?code={$scripturl|urlencode}%3F{$value.linkdate|smallHash}&width=200&height=200" class="link-qrcode"><img src="images/qrcode.png#" width="13" height="13" title="QR-Code"></a> - 
+                    <a href="http://invx.com/code/qrcode/?code={$scripturl|urlencode}%3F{$value.linkdate|smallHash}&width=200&height=200" class="link-qrcode"><img src="images/qrcode.png#" width="13" height="13" title="QR-Code"></a> -
                     <span class="link-url" title="Short link">{$value.url|htmlspecialchars}</span>
                     {if="$value.tags"}
                         <ul class="link-tag-list">
@@ -91,7 +91,7 @@
         </article>
     {/loop}
 
-</section>
+</div>
     {if="count($links)!==0"}
     <div class="bottom-pagination">{include="linklist.paging"}</div>
     {/if}
@@ -102,7 +102,7 @@
 </figure>
 
     {include="page.footer"}
-{if="empty($GLOBALS['disablejquery'])"}    
+{if="empty($GLOBALS['disablejquery'])"}
 <script>
 $(document).ready(function() {
     $qrcode = $(document.getElementById('showQrcode'));

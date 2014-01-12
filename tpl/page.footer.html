@@ -11,16 +11,16 @@
 {if="empty($GLOBALS['disablejquery'])"}
 <script type="text/javascript" src="components/jquery-masonry/jquery.masonry.min.js"></script>
 <script type="text/javascript">
-	var _width = $(document).width();
-	if( _width >= 840 && 'masonry' in $.fn) {
-		var $container =  $(document.getElementById('link-list'));
-		// $container.find('article').wookmark({"container":$container,"offset": 20});
-		$container.masonry({
-		  itemSelector: '.boxwhite',
-		  columnWidth: 45,
-		  isFitWidth: (_width <= 1195) ? true : false
-		});
-	}
+  var _width = $(document).width();
+  if( _width >= 840 && 'masonry' in $.fn) {
+    var $container =  $(document.getElementById('link-list'));
+    // $container.find('article').wookmark({"container":$container,"offset": 20});
+    $container.masonry({
+      itemSelector: '.boxwhite',
+      columnWidth: 45,
+      isFitWidth: true
+    });
+  }
 </script>
 {/if}
 {if="($GLOBALS['config']['OPEN_SHAARLI'] || isLoggedIn()) && empty($GLOBALS['disablejquery'])"}

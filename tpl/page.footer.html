@@ -13,13 +13,18 @@
 <script type="text/javascript">
   var _width = $(document).width();
   if( _width >= 840 && 'masonry' in $.fn) {
-    var $container =  $(document.getElementById('link-list'));
-    // $container.find('article').wookmark({"container":$container,"offset": 20});
-    $container.masonry({
-      itemSelector: '.boxwhite',
-      columnWidth: 45,
-      isFitWidth: true
-    });
+    var $container =  $(document.getElementById('link-list')),
+        howMany = $container.find('.boxwhite').length;
+      if(howMany > 1) {
+        // $container.find('article').wookmark({"container":$container,"offset": 20});
+        $container.masonry({
+          itemSelector: '.boxwhite',
+          columnWidth: 45,
+          isFitWidth: (_width <= 1195) ? true : false
+        });
+      }else{
+        document.body.className = 'page-single-link';
+      }
   }
 </script>
 {/if}

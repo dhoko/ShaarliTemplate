@@ -1,5 +1,8 @@
 # A modern template for Shaarli
 
+> Update 9/11/2014
+A pure CSS version of the template, based on Shaarli is available here [shaarli-template](https://github.com/dhoko/shaarli-themes/tree/master/themes/dhoko). Only a CSS to upload. Preview available [on my shaarli](http://colibri-libre.org/liens/)
+
 Modern template for [Shaarli](https://github.com/sebsauvage/Shaarli 'Shaarli The personal, minimalist, super-fast, no-database delicious clone.')
 You can see a hosted version [on my shaarli](http://colibri-libre.org/liens/)
 
